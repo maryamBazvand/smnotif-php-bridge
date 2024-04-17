@@ -15,7 +15,7 @@ class NotifierApi
     public const    STAGE             = "stage";
     public const    TEST              = "test";
     public const    API_PATH          = "%s://notif.snapp.market/api/v%s/";
-    public const    API_PATH_TEST     = "%s://notif-%s.snapp.market/api/v%s/";
+    public const    API_PATH_TEST     = "%s://notif.snappmarket.tech/api/v%s/";
     public const    SMS               = 'sms';
     public const    EMAIL             = 'email';
     public const    PUSH              = 'push';
@@ -152,11 +152,12 @@ class NotifierApi
                 return sprintf(self::API_PATH,$secure,$version);
                 break;
             case self::STAGE:
-                return sprintf(self::API_PATH_TEST,$secure,'s',$version);
-                break;
             case self::TEST:
-                return sprintf(self::API_PATH_TEST,$secure,'t',$version);
+                return sprintf(self::API_PATH_TEST,$secure,$version);
                 break;
+//
+//                return sprintf(self::API_PATH_TEST,$secure,'t',$version);
+//                break;
             default:
                 return sprintf(self::API_PATH,$secure,$version);
         }
